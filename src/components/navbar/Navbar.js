@@ -9,49 +9,52 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <AppBar sx={{ background: 'black',position: 'static' }}>
-      <StyledToolbar>
-        <SocialBox>
-          <Facebook />
-          <Instagram />
-          <Twitter />
-        </SocialBox>
-        <MenuBox
-          sx={{
-            display: {
-              xs: 'none',
-              sm: 'none',
-              md: 'flex'
-            }
-          }}
-        >
-          {menuItems.map((item) => (
-            <Typography
-              key={item.name}
-              sx={{ cursor: 'pointer', fontSize: '14px' }}
-            >
-              {item.name}
-            </Typography>
-          ))}
-        </MenuBox>
-        <SearchBox>
-          <InputBase placeholder="Search..." sx={{ color: 'white' }} />
-          <Menu
-            onClick={() => setOpen(!open)}
+    <>
+      <StyledToolbar/>
+      <AppBar sx={{ background: 'black', position: 'fixed' }}>
+        <StyledToolbar>
+          <SocialBox>
+            <Facebook />
+            <Instagram />
+            <Twitter />
+          </SocialBox>
+          <MenuBox
             sx={{
-              color: 'white',
               display: {
-                xs: 'block',
-                sm: 'block',
-                md: 'none'
-              },
-              cursor: 'pointer'
+                xs: 'none',
+                sm: 'none',
+                md: 'flex'
+              }
             }}
-          />
-        </SearchBox>
-      </StyledToolbar>
-      <Dropdown props={{ open, setOpen }} />
-    </AppBar>
+          >
+            {menuItems.map((item) => (
+              <Typography
+                key={item.name}
+                sx={{ cursor: 'pointer', fontSize: '14px' }}
+              >
+                {item.name}
+              </Typography>
+            ))}
+          </MenuBox>
+          <SearchBox>
+            <InputBase placeholder="Search..." sx={{ color: 'white' }} />
+            <Menu
+              onClick={() => setOpen(!open)}
+              sx={{
+                color: 'white',
+                display: {
+                  xs: 'block',
+                  sm: 'block',
+                  md: 'none'
+                },
+                cursor: 'pointer'
+              }}
+            />
+          </SearchBox>
+        </StyledToolbar>
+        <Dropdown props={{ open, setOpen }} />
+      </AppBar>
+    </>
   );
 };
 
