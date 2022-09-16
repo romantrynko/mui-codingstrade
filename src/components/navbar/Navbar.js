@@ -1,39 +1,15 @@
-import React from 'react';
-import {
-  AppBar,
-  Box,
-  InputBase,
-  styled,
-  Toolbar,
-  Typography
-} from '@mui/material';
+import React, { useState } from 'react';
+import { AppBar, InputBase, Typography } from '@mui/material';
 import { Facebook, Instagram, Menu, Twitter } from '@mui/icons-material';
 import { menuItems } from '../../constants';
 import Dropdown from '../dropdown/Dropdown';
+import { MenuBox, SearchBox, SocialBox, StyledToolbar } from './StyledNavbar';
 
 const Navbar = () => {
-  const StyledToolbar = styled(Toolbar)({
-    display: 'flex',
-    justifyContent: 'space-between'
-  });
-
-  const SocialBox = styled(Box)({
-    display: 'flex',
-    gap: 10
-  });
-
-  const MenuBox = styled(Box)({
-    display: 'flex',
-    gap: 30
-  });
-
-  const SearchBox = styled(Box)({
-    display: 'flex',
-    gap: 5
-  });
+  const [open, setOpen] = useState(false);
 
   return (
-    <AppBar sx={{ background: 'black' }}>
+    <AppBar sx={{ background: 'black',position: 'static' }}>
       <StyledToolbar>
         <SocialBox>
           <Facebook />
@@ -61,18 +37,20 @@ const Navbar = () => {
         <SearchBox>
           <InputBase placeholder="Search..." sx={{ color: 'white' }} />
           <Menu
+            onClick={() => setOpen(!open)}
             sx={{
               color: 'white',
               display: {
                 xs: 'block',
                 sm: 'block',
                 md: 'none'
-              }
+              },
+              cursor: 'pointer'
             }}
           />
         </SearchBox>
       </StyledToolbar>
-      <Dropdown/>
+      <Dropdown props={{ open, setOpen }} />
     </AppBar>
   );
 };

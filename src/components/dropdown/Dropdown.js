@@ -2,13 +2,16 @@ import { Box, Menu, MenuItem } from '@mui/material';
 import React from 'react';
 import { menuItems } from '../../constants';
 
-const Dropdown = () => {
+const Dropdown = ({ props }) => {
+  const { open, setOpen } = props;
+  
   return (
     <>
       <Menu
         id="demo-positioned-menu"
         aria-labelledby="demo-positioned-button"
-        open={true}
+        open={open}
+        onClose={() => setOpen(!open)}
         anchorOrigin={{
           vertical: 'top',
           horizontal: 'right'
