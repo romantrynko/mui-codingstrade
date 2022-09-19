@@ -6,6 +6,7 @@ import { SocialBox } from '../navbar/StyledNavbar';
 const Footer = () => {
   return (
     <Box
+      id="contacts"
       sx={{
         background: 'black',
         height: 300

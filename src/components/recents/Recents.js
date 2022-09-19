@@ -10,8 +10,8 @@ import forest_6 from '../../static/forest_6.jpeg';
 
 const Recents = () => {
   return (
-    <Box>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 1 }}>
+    <Box id='recent'>
+      <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item md={12} xs={12}>
           <MyCard image={forest_1} />
         </Grid>

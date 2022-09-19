@@ -12,7 +12,17 @@ const MyCard = ({ image }) => {
           component="img"
           image={image}
           alt="forest"
-          sx={{ borderRadius: 3 }}
+          sx={{
+            borderRadius: 3,
+            boxShadow: '0px 0px 13px 0px rgba(0,0,0, 0.5)',
+            '&:hover': {
+              transform: 'scale(1.08)',
+              transitionDuration: '300ms'
+            },
+            '&:not(:hover)': {
+              transitionDuration: '200ms'
+            }
+          }}
         />
         <CardContent>
           <Typography

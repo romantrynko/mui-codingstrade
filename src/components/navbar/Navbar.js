@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppBar, InputBase, Typography } from '@mui/material';
+import { AppBar, InputBase, Link, Typography } from '@mui/material';
 import { Facebook, Instagram, Menu, Twitter } from '@mui/icons-material';
 import { menuItems } from '../../constants';
 import Dropdown from '../dropdown/Dropdown';
@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <>
-      <StyledToolbar/>
+      <StyledToolbar />
       <AppBar sx={{ background: 'black', position: 'fixed' }}>
         <StyledToolbar>
           <SocialBox>
@@ -28,12 +28,14 @@ const Navbar = () => {
             }}
           >
             {menuItems.map((item) => (
-              <Typography
-                key={item.name}
-                sx={{ cursor: 'pointer', fontSize: '14px' }}
-              >
-                {item.name}
-              </Typography>
+              <Link href={item.link}>
+                <Typography
+                  key={item.name}
+                  sx={{ cursor: 'pointer', fontSize: '14px' }}
+                >
+                  {item.name}
+                </Typography>
+              </Link>
             ))}
           </MenuBox>
           <SearchBox>

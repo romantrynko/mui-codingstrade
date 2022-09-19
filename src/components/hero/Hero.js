@@ -4,7 +4,7 @@ import image from '../../static/background.jpeg';
 
 const Hero = () => {
   return (
-    <Box>
+    <Box id='main'>
       <Typography
         align="center"
         variant="h1"
@@ -53,7 +53,7 @@ const Hero = () => {
               opacity: '0.7',
               color: 'white',
               borderRadius: 3,
-              padding: '10px 0'
+              padding: '35px 0'
             }}
           >
             <Typography variant="h6" color="green" align="center" m={3}>

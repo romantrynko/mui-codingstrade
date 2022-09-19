@@ -7,11 +7,12 @@ import { StyledBox, StyledTypography } from './StyledCategory';
 
 const Category = () => {
   return (
-    <Box>
+    <Box id="categories">
       <Stack
         direction={{ xs: 'column', sm: 'column', md: 'row' }}
-        spacing={{ xs: 5, sm: 5, md: 3 }}
-        mt={15} mb={15}
+        spacing={5}
+        mt={15}
+        mb={15}
       >
         <StyledBox sx={{ backgroundImage: `url(${mountains})` }}>
           <StyledTypography align="center" variant="h4">

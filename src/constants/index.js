@@ -4,19 +4,19 @@ export const menuItems = [
     link: '/'
   },
   {
-    name: 'Products',
-    link: '/'
+    name: 'Main',
+    link: '#main'
   },
   {
-    name: 'Portfolio',
-    link: '/'
+    name: 'Categories',
+    link: '#categories'
   },
   {
-    name: 'Blog',
-    link: '/'
+    name: 'Recent',
+    link: '#recent'
   },
   {
     name: 'Contact Us',
-    link: '/'
+    link: '#contacts'
   }
 ];
