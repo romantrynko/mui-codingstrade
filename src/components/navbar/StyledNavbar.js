@@ -7,7 +7,8 @@ export const StyledToolbar = styled(Toolbar)({
 
 export const SocialBox = styled(Box)({
   display: 'flex',
-  gap: 10
+  gap: 10,
+  color: 'white'
 });
 
 export const MenuBox = styled(Box)({

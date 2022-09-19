@@ -4,7 +4,7 @@ import { menuItems } from '../../constants';
 
 const Dropdown = ({ props }) => {
   const { open, setOpen } = props;
-  
+
   return (
     <>
       <Menu
@@ -21,11 +21,28 @@ const Dropdown = ({ props }) => {
           horizontal: 'left'
         }}
       >
-        <Box sx={{ width: 350, height: '90vh' }}>
+        <Box
+          sx={{
+            width: 250,
+            height: '50vh',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            // padding: '30px 0'
+          }}
+        >
           {menuItems.map((item) => (
             <MenuItem
               key={item.name}
-              sx={{ cursor: 'pointer', fontSize: '14px' }}
+              sx={{
+                cursor: 'pointer',
+                fontSize: '20px',
+                // width: '100%',
+                '&:hover': {
+                  color: 'green'
+                }
+              }}
             >
               {item.name}
             </MenuItem>
