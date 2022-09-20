@@ -16,7 +16,8 @@ const MyCard = ({ image }) => {
             borderRadius: 3,
             boxShadow: '0px 0px 13px 0px rgba(0,0,0, 0.5)',
             '&:hover': {
-              transform: 'scale(1.08)',
+              transform: 'scale(1.03)',
+              boxShadow: '0px 0px 16px 3px rgba(0,0,0, 0.65)',
               transitionDuration: '300ms'
             },
             '&:not(:hover)': {

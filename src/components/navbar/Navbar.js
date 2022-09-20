@@ -28,10 +28,22 @@ const Navbar = () => {
             }}
           >
             {menuItems.map((item) => (
-              <Link href={item.link}>
+              <Link
+                href={item.link}
+                sx={{
+                  textDecoration: 'none',
+                  color: 'white',
+                  '&:hover': {
+                    color: 'green'
+                  }
+                }}
+              >
                 <Typography
                   key={item.name}
-                  sx={{ cursor: 'pointer', fontSize: '14px' }}
+                  sx={{
+                    cursor: 'pointer',
+                    fontSize: '14px'
+                  }}
                 >
                   {item.name}
                 </Typography>
